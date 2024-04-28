@@ -1,0 +1,94 @@
+
+
+body{
+    background-color: #3e4533;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.margem-button{
+    margin-right: 15px;
+    margin-bottom: 30px;
+}
+
+.estilo-botao{
+    color:blanchedalmond;
+    font-weight: 600;
+}
+
+.card-estilo{
+    background-color:#1c2212ba;
+    color: aliceblue;
+    border-style: none;
+    margin-bottom: 60px;
+}
+
+.card-estilo:hover{
+   cursor: pointer;
+   box-shadow: 0 0 4px blanchedalmond;
+
+}
+
+.card-estilo h5{
+    text-align: center;
+    font-weight: 500;
+    font-family: "Jolly Lodger", serif;
+    font-size: xx-large;
+    color: blanchedalmond;
+}
+
+.card-estilo .divbotao{
+    text-align: center;
+}
+
+.card-estilo .list-group-item {
+    background-color:#1c2212ba;
+    color:blanchedalmond;
+    text-align: center;
+    border: 3px;
+}
+
+.footer-estilo{
+    background-color: #1c2212ba;
+    color:blanchedalmond;
+}
+
+.estilo-card2{
+    text-align: center;
+    color: blanchedalmond;
+    text-shadow: 0 0 6px #3e4533;
+    background-image: url('../imagens/restauranteopaco.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    margin-bottom: 40px;
+}
+
+.estilo-card2 h5{
+    margin-top: 30px;
+    font-family: "Jolly Lodger", serif;
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.estilo-card2 p{
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+    .estilo-card2 h5 {
+        font-size: 2em;
+    }
+
+    .estilo-card2 p {
+        font-size: 1em;
+    }
+}
+
+.list-group-item{
+    text-align: center;
+    color: blanchedalmond;
+    background: none;
+    border: 3px;
+}
