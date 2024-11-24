@@ -92,3 +92,21 @@ body{
     background: none;
     border: 3px;
 }
+
+.comidas{
+    margin-bottom: 60px;
+    margin-top: 60px;
+    background-color: #272c20;
+    color: blanchedalmond;
+    padding: 20px;
+    font-size: large;
+    border-radius: 2rem;
+}
+
+.comidas h2{
+    font-family: "Jolly Lodger", serif;
+}
+
+.comidas img{
+    border-radius: 2rem;
+}
