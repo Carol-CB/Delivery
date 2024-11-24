@@ -2,16 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const pathname = window.location.pathname;
 
   if (pathname.endsWith("restaurantes.html")) {
-    // Para a página de detalhes de restaurante
+    //detalhes de restaurante
     getRestaurantDetails();
-    getFoodsForRestaurants(); // Mostra as 6 comidas gerais
+    getFoodsForRestaurants(); //mostra comidas
   } else {
-    // Para a página de listagem de restaurantes
+    //listagem de restaurantes
     getRestaurants();
   }
 });
 
-// Função para obter os restaurantes da API
 function getRestaurants() {
   fetch("https://apifakedelivery.vercel.app/restaurants")
     .then(response => response.json())
@@ -19,7 +18,6 @@ function getRestaurants() {
     .catch(error => console.error("Erro ao carregar restaurantes:", error));
 }
 
-// Função para exibir os restaurantes na página
 function displayRestaurants(restaurants) {
   const restaurantContainer = document.querySelector("#restaurant-list");
   if (!restaurantContainer) {
@@ -27,7 +25,7 @@ function displayRestaurants(restaurants) {
     return;
   }
 
-  restaurantContainer.innerHTML = ""; // Limpar o conteúdo existente
+  restaurantContainer.innerHTML = "";
 
   restaurants.forEach(restaurant => {
     const card = document.createElement("div");
@@ -52,7 +50,7 @@ function displayRestaurants(restaurants) {
   });
 }
 
-// Função para obter os detalhes do restaurante
+
 function getRestaurantDetails() {
   const urlParams = new URLSearchParams(window.location.search);
   const restaurantId = urlParams.get("id");
@@ -68,7 +66,7 @@ function getRestaurantDetails() {
     .catch(error => console.error("Erro ao carregar detalhes do restaurante:", error));
 }
 
-// Função para exibir os detalhes do restaurante
+
 function displayRestaurantDetails(restaurant) {
   const restaurantDetail = document.querySelector("#restaurant-detail");
   if (!restaurantDetail) {
@@ -87,18 +85,18 @@ function displayRestaurantDetails(restaurant) {
   `;
 }
 
-// Função para obter e exibir as comidas (fixas para todos os restaurantes)
+
 function getFoodsForRestaurants() {
   fetch("https://apifakedelivery.vercel.app/foods")
     .then(response => response.json())
     .then(foods => {
-      const topFoods = foods.slice(0, 6); // Seleciona as 6 primeiras
+      const topFoods = foods.slice(0, 6);
       displayFoods(topFoods);
     })
     .catch(error => console.error("Erro ao carregar comidas:", error));
 }
 
-// Função para exibir as comidas na página
+
 function displayFoods(foods) {
   const foodContainer = document.querySelector(".row");
   if (!foodContainer) {
@@ -106,7 +104,7 @@ function displayFoods(foods) {
     return;
   }
 
-  foodContainer.innerHTML = ""; // Limpa o container
+  foodContainer.innerHTML = "";
 
   if (foods.length === 0) {
     foodContainer.innerHTML = `<p>Não há comidas disponíveis.</p>`;
@@ -142,11 +140,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const pathname = window.location.pathname;
 
   if (pathname.endsWith("comidas.html")) {
-    getFoodDetails(); // Chama a função para obter os detalhes da comida
+    getFoodDetails();
   }
 });
 
-// Função para buscar os detalhes da comida pela API
+
 function getFoodDetails() {
   const urlParams = new URLSearchParams(window.location.search);
   const foodId = urlParams.get("id");
@@ -162,9 +160,8 @@ function getFoodDetails() {
     .catch(error => console.error("Erro ao carregar os detalhes da comida:", error));
 }
 
-// Função para exibir os detalhes da comida na página
+
 function displayFoodDetails(food) {
-  // Verifica se o elemento existe antes de manipulá-lo
   const foodImage = document.getElementById("food-image");
   const foodName = document.getElementById("food-name");
   const foodPrice = document.getElementById("food-price");
